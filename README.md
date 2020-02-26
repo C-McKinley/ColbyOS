@@ -1,7 +1,7 @@
 # ColbyOS
 A simplic os for x86_64 archicture
 
-
+```
  __         __
 /  \.-"""-./  \
 \    -   -    /
@@ -9,7 +9,7 @@ A simplic os for x86_64 archicture
  \  .-'''-.  /
   '-\__Y__/-'
      `---`
-     
+  ```
  ## Resources
  wiki.osdev.org/
  cs.bham.ac.uk/~exr/
