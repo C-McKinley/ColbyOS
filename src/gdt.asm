@@ -25,7 +25,7 @@ gdt_end:
 
 gdt_descriptor:
 	dw gdt_end - gdt_start - 1
-	dd get_start
+	dd gdt_start
 
-CODE_SET equ gdt_code - gdt_start
-DATA_SEG equ gdt_dta - gdt_start
+CODE_SEG equ gdt_code - gdt_start
+DATA_SEG equ gdt_data - gdt_start

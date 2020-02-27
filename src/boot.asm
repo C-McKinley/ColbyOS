@@ -7,7 +7,8 @@ KERNAL_OFFSET equ 0x1000
 	mov bp, 0x9000
 	mov sp, bp
 	mov bx, MSG_REAL_MODE
-	call print_string
+	call print
+	call print_nl
 	
 	call load_kernal
 	
@@ -16,14 +17,18 @@ KERNAL_OFFSET equ 0x1000
 	jmp $
 
 ; Include
-%include "pm/gdt.asm"
-%include "disk/disk_load.asm"
-
+%include "./gdt.asm"
+%include "./disk_load.asm"
+%include "./print.asm"
+%include "./switch_pm.asm"
+%include "./print_hex.asm"
+%include "./print_pm.asm"
 [bits 16]
 
 load_kernal:
 	mov bx, MSG_LOAD_KERNAL
-	call print_string
+	call print
+	call print_nl
 	
 	mov bx, KERNAL_OFFSET
 	mov dh, 15
@@ -44,7 +49,7 @@ BEGIN_PM:
 BOOT_DRIVE db 0
 MSG_REAL_MODE db "Started in 16-bit Real Mode", 0
 MSG_PROT_MODE db "Sucessfully landed in 32-bit Protected Mode", 0
-MSG_LAOD_KERNAL db "Load kernal into memory", 0
+MSG_LOAD_KERNAL db "Load kernal into memory", 0
 
 times 510-($-$$) db 0
 dw 0xaa55
