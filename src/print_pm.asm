@@ -1,7 +1,7 @@
 [bits 32]
 
-VIDEO_MEMORY equ 0xB800
-WHITE_ON_BLACK equ 0x0F
+VIDEO_MEMORY equ 0xb800
+WHITE_ON_BLACK equ 0x0f
 
 print_string_pm:
 	pusha
@@ -15,7 +15,6 @@ print_string_pm_loop:
 	je done
 	
 	mov [edx], ax
-
 	add ebx, 1
 	add edx, 2
 	

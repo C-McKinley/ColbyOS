@@ -1,5 +1,5 @@
 ; A boot sector that boots CPP kernal in 32-bit protected mode
-[org 0x7C00]
+[org 0x7c00]
 KERNAL_OFFSET equ 0x1000
 
 	mov [BOOT_DRIVE], dl
@@ -31,7 +31,7 @@ load_kernal:
 	call print_nl
 	
 	mov bx, KERNAL_OFFSET
-	mov dh, 15
+	mov dh, 31
 	mov dl, [BOOT_DRIVE]
 	call disk_load
 	

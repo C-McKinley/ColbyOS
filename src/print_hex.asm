@@ -12,7 +12,7 @@ hex_loop:
     je end
     
     mov ax, dx
-    and ax, 0x000F
+    and ax, 0x000f
     add al, 0x30
     cmp al, 0x39 
     jle step2
@@ -24,8 +24,7 @@ step2:
     mov bx, HEX_OUT + 5 ; base + length
     sub bx, cx  
     mov [bx], al
-    ror dx, 4 ; 0x1234 -> 0x4123 -> 0x3412 -> 0x2341 -> 0x1234
-
+    ror dx, 4 
     add cx, 1
     jmp hex_loop
 
