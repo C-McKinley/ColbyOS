@@ -3,5 +3,5 @@ syntax enable
 set number
 set showcmd
 set tabstop=4
-set tc=100
+set tw=100
 
